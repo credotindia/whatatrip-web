@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   const handleWhatsAppClick = () => {
     const phoneNumber = "+1234567890";
     const message = encodeURIComponent(
-      "Hi! I'm interested in Authentic Cultural Experiences in Kashmir. Can you help me discover something truly transformative?"
+      "Hi! I'm interested in Authentic Cultural Experiences in Kashmir in Kashmir. Can you help me discover something truly transformative?"
     );
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, "_blank");
