@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Mail, MessageSquare, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
+import { Heart, Mail, MessageSquare, Phone, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -58,15 +58,22 @@ const Footer: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <Mail className="h-5 w-5 text-amber-400" />
-                <span className="text-stone-400 font-light">connect@whatatrip.com</span>
+                <span className="text-stone-400 font-light">
+                  <a href="mailto:whatatripofficial@gmail.com" className="hover:text-amber-400 transition">
+                  whatatripofficial@gmail.com
+                  </a>
+                </span>
               </div>
               <div className="flex items-center space-x-2">
-                <MessageSquare className="h-5 w-5 text-amber-400" />
-                <span className="text-stone-400 font-light">WhatsApp: +1 (555) 123-4567</span>
+                <Phone className="h-5 w-5 text-amber-400" />
+                <span className="text-stone-400 font-light">
+                  <a href="tel:+917028121353" className='hover:text-amber-400 transition'>+91 70 28 121 353</a>,
+                  <a href="tel:+917006456372" className='hover:text-amber-400 transition'> +91 70 06 456 372</a>
+                </span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-5 w-5 text-amber-400" />
-                <span className="text-stone-400 font-light">Global Cultural Network</span>
+                <span className="text-stone-400 font-light">3rd Floor, Al Quds Mall, Bemina, Srinagar, Jammu & Kashmir – 190018</span>
               </div>
             </div>
           </div>

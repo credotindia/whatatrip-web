@@ -5,33 +5,33 @@ const AuthenticStories: React.FC = () => {
   const stories = [
     {
       id: 1,
-      name: "Sarah Chen",
-      location: "San Francisco, CA",
+      name: "Navaf Sharafudheen",
+      location: "Ernakulam, Kerala",
       experience: "Cooking with Devi ji in Rajasthan",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      quote: "In Devi ji's kitchen, I didn't just learn recipes—I learned the language of love. Every spice told a story, every meal was a prayer. I left with more than cooking skills; I left with a piece of her family's soul.",
+      image: "/src/assets/person.png",
+      quote: "I was lucky enough to travel to Kashmir twice, once in the autumn of 2022 and then again in the summer of 2023. Both trips are still some of the most unforgettable Umerriences of my life. Kashmir truly feels like heaven on earth, not just because of its breathtaking mountains and valleys, but also because of the warmth and kindness of its people. Even though I was thousands of kilometers away from my own home, it felt like I belonged there. A huge thanks to What a Trip and to my brothers Umer Mukhtar and Akram for showing me the real Kashmir—the beauty, the culture, and the love that stays with you long after you leave.",
       transformation: "Discovered the sacred in everyday moments",
       connectionMade: "Became an honorary granddaughter",
       monthsAgo: 3
     },
     {
       id: 2,
-      name: "Marcus Johnson",
-      location: "Chicago, IL",
+      name: "Nabeel Shan",
+      location: "Calicut, Kerala",
       experience: "Weaving with Maria in Peru",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      quote: "Maria's hands moved like poetry, and somehow she taught my clumsy fingers to speak the same language. Each thread became a conversation between our cultures, each pattern a bridge across worlds.",
+      image: "/src/assets/person.png",
+      quote: "I’ve traveled with What A Trip multiple times – twice to Kashmir (once in summer and once in winter), and also on an unforgettable Srinagar–Ladakh bike trip. Every experience with them was truly amazing. Since they are based in Kashmir, they know the region inside out and take care of every detail with great warmth. The level of care and local expertise they provide is something no other company can match.",
       transformation: "Learned patience and mindful creation",
       connectionMade: "Ongoing friendship and textile collaboration",
       monthsAgo: 6
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
-      location: "Barcelona, Spain",
+      name: "Mirsab & Nidha",
+      location: "Trissur, Kerala",
       experience: "Sailing with Hassan in Morocco",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop",
-      quote: "At 5 AM, watching Hassan mend nets in the dawn light, I understood that some wisdom can only be learned through salt spray and patient hands. The ocean teaches what no classroom can.",
+      image: "/src/assets/person.png",
+      quote: "We’ve traveled with 'What A Trip' twice now, and both journeys were truly unforgettable! Our first autumn trip was seamless, stress-free, and perfectly organized. On our second trip just last week, we even attended a Kashmiri wedding and were touched by the incredible warmth and hospitality of the local people. With 'What A Trip', you don’t just travel — you experience Kashmir like family.",
       transformation: "Found peace in daily rhythms",
       connectionMade: "Invited to family celebrations",
       monthsAgo: 4
@@ -79,7 +79,7 @@ const AuthenticStories: React.FC = () => {
                       <p className="text-sm text-amber-600">{story.monthsAgo} months ago</p>
                     </div>
                   </div>
-                  <div className="border-t border-stone-200 pt-4">
+                  {/*<div className="border-t border-stone-200 pt-4">
                     <p className="text-sm text-stone-600 mb-2">
                       <span className="font-semibold">Experience:</span> {story.experience}
                     </p>
@@ -89,7 +89,7 @@ const AuthenticStories: React.FC = () => {
                     <p className="text-sm text-stone-600">
                       <span className="font-semibold">Connection Made:</span> {story.connectionMade}
                     </p>
-                  </div>
+                  </div>*/}
                 </div>
               </div>
               <div className="flex-1">
