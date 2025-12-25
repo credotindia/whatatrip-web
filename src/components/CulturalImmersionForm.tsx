@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Heart, Send, Globe, Clock, Users, Sparkles } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const CulturalImmersionForm: React.FC = () => {
+  const [isSending, setIsSending] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -79,16 +82,59 @@ const CulturalImmersionForm: React.FC = () => {
     }));
   };
 
+  // --- UPDATED SUBMIT FUNCTION ---
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Cultural immersion form submitted:', formData);
-    // Handle form submission here
+    setIsSending(true);
+
+    // This object keys MATCH your EmailJS template variables exactly
+    const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        
+        travelStyle: formData.travelStyle,
+        immersionLevel: formData.immersionLevel,
+        
+        // Convert arrays to readable strings for the email
+        interactionTypes: formData.interactionTypes.join(', '), 
+        specialInterests: formData.specialInterests.join(', '),
+        
+        personalMessage: formData.personalMessage,
+        previousExperiences: formData.previousExperiences,
+        
+        languagePreference: formData.languagePreference,
+        accommodationPreference: formData.accommodationPreference,
+        physicalLimitations: formData.physicalLimitations,
+
+        // I included timeline here just in case you want to add it to your template later
+        timeline: formData.timeline,
+        timelineFlexibility: formData.timelineFlexibility
+    };
+
+    emailjs.send(
+        'whatatrip',   // <--- REPLACE WITH ACTUAL SERVICE ID
+        'whatatripcontact',  // <--- REPLACE WITH ACTUAL TEMPLATE ID
+        templateParams,
+        'wcZOuaAkyZfKhcCST'    // <--- REPLACE WITH ACTUAL PUBLIC KEY
+    )
+    .then((result) => {
+        console.log('SUCCESS!', result.text);
+        alert('Thank you! Your journey details have been sent successfully.');
+        setIsSending(false);
+        // Optional: clear form
+        // setFormData({ name: '', email: '', ... });
+    })
+    .catch((error) => {
+        console.log('FAILED...', error.text);
+        alert('Something went wrong. Please try again later.');
+        setIsSending(false);
+    });
   };
 
   return (
     <div className="min-h-screen bg-stone-50 pt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <Heart className="h-8 w-8 text-amber-600 mr-2" />
@@ -101,7 +147,6 @@ const CulturalImmersionForm: React.FC = () => {
           </p>
         </div>
 
-        {/* Form */}
         <div className="bg-white rounded-3xl shadow-lg p-8">
           <form onSubmit={handleSubmit} className="space-y-10">
             {/* Personal Information */}
@@ -391,10 +436,11 @@ const CulturalImmersionForm: React.FC = () => {
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-gradient-to-r from-amber-600 to-teal-700 text-white px-12 py-4 rounded-full hover:from-amber-700 hover:to-teal-800 transition-all duration-200 font-medium flex items-center space-x-2 mx-auto transform hover:scale-105"
+                disabled={isSending}
+                className={`bg-gradient-to-r from-amber-600 to-teal-700 text-white px-12 py-4 rounded-full hover:from-amber-700 hover:to-teal-800 transition-all duration-200 font-medium flex items-center space-x-2 mx-auto transform hover:scale-105 ${isSending ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 <Send className="h-5 w-5" />
-                <span>Begin My Journey</span>
+                <span>{isSending ? 'Sending...' : 'Begin My Journey'}</span>
               </button>
               <p className="text-sm text-stone-600 mt-4">
                 We'll connect you with the perfect cultural experience within 24 hours
