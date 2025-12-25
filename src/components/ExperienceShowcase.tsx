@@ -129,7 +129,7 @@ const ExperienceShowcase: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold text-stone-900 mb-4">
-            Authentic Cultural Experiences
+            Authentic Cultural Experiences in Kashmir
           </h1>
           <p className="text-xl text-stone-600 max-w-2xl mx-auto font-light">
             Discover transformative connections with local communities around the world
