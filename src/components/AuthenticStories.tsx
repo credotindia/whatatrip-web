@@ -94,7 +94,7 @@ const AuthenticStories: React.FC = () => {
               </div>
               <div className="flex-1">
                 <img
-                  src={`https://images.pexels.com/photos/${index % 2 === 0 ? '1143754' : '6966501'}/pexels-photo-${index % 2 === 0 ? '1143754' : '6966501'}.jpeg?auto=compress&cs=tinysrgb&w=600`}
+                  src={`/src/assets/featured-experiences-04.jpg`}
                   alt={`${story.experience} cultural experience`}
                   className="w-full h-80 object-cover rounded-3xl shadow-lg"
                 />
@@ -105,21 +105,21 @@ const AuthenticStories: React.FC = () => {
 
         {/* Impact Stats */}
         <div className="bg-gradient-to-r from-amber-50 to-teal-50 rounded-3xl p-12">
-          <h3 className="text-2xl font-bold text-stone-900 text-center mb-8">
+          <h3 className="text-2xl font-bold text-stone-100 text-center mb-8">
             Creating Meaningful Impact
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {impactStats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="flex justify-center mb-4">
-                  <stat.icon className="h-12 w-12 text-teal-700" />
+                  <stat.icon className="h-12 w-12 text-stone-100" />
                 </div>
-                <div className="text-3xl font-bold text-stone-900 mb-2">{stat.number}</div>
-                <div className="text-stone-600 font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold text-stone-100 mb-2">{stat.number}</div>
+                <div className="text-stone-100 font-medium">{stat.label}</div>
               </div>
             ))}
           </div>
-          <p className="text-center text-stone-600 mt-8 max-w-2xl mx-auto">
+          <p className="text-center text-stone-100 mt-8 max-w-2xl mx-auto">
             Every journey creates ripples of positive change—for travelers, communities, and the preservation of cultural heritage worldwide.
           </p>
         </div>

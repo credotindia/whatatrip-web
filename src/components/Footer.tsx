@@ -9,8 +9,11 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Heart className="h-8 w-8 text-amber-400" />
-              <span className="text-xl font-bold">What A Trip</span>
+            <img
+              src="src/assets/logo-white.png"
+              alt="What A Trip Logo"
+              className="h-12 w-auto"
+            />
             </div>
             <p className="text-stone-400 mb-4 font-light">
               Connecting adventurous souls with authentic local experiences that transform perspectives and create lasting bonds.
@@ -72,7 +75,7 @@ const Footer: React.FC = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5 text-amber-400" />
+                <MapPin className="h-10 w-10 text-amber-400" />
                 <span className="text-stone-400 font-light">3rd Floor, Al Quds Mall, Bemina, Srinagar, Jammu & Kashmir – 190018</span>
               </div>
             </div>

@@ -4,6 +4,9 @@ import image1 from "../assets/featured-experiences-01.jpg";
 import image2 from "../assets/featured-experiences-02.jpg";
 import image3 from "../assets/featured-experiences-03.jpg";
 import image4 from "../assets/featured-experiences-04.jpg";
+import image5 from "../assets/1.jpg";
+import image6 from "../assets/2.jpg";
+import image7 from "../assets/3.jpg";
 
 const FeaturedExperiences: React.FC = () => {
   const experiences = [
@@ -19,7 +22,7 @@ const FeaturedExperiences: React.FC = () => {
       ],
       description:
         "Leave behind the crowd and escape to Aru — Kashmir’s hidden alpine pocket. Trek through wildflower trails, fish in glacial rivers, and sleep under a sky you won’t believe is real. Wake up to pine-scented air and stories by the fire.",
-      image: image1,
+      image: image7,
       communityImpact:
         "Supports local trekking communities & promotes sustainable tourism",
       phoneNumber: "+1234567890",
@@ -37,7 +40,7 @@ const FeaturedExperiences: React.FC = () => {
       ],
       description:
         "Base yourself in a serene mountain village where the WiFi works and the pace slows down. Join in the rhythms of local life — from morning chai with farmers to quiet hikes and homemade Kashmiri meals. It’s not a stay; it’s a new way of living.",
-      image: image2,
+      image: image6,
       communityImpact:
         "Preserves rural traditions while enabling responsible digital nomadism",
       phoneNumber: "+1234567890",
@@ -55,7 +58,7 @@ const FeaturedExperiences: React.FC = () => {
       ],
       description:
         "Saddle up for an expedition that skips the usual Manali-Leh route and dives deep into Ladakh’s undiscovered sides. Ride through valleys no one’s posted on Instagram yet. Camp in secret spots, share tea with monks, and touch the soul of the mountains.",
-      image: image3,
+      image: image5,
       communityImpact:
         "Empowers local guides and opens access to lesser-known villages",
       phoneNumber: "+1234567890",
