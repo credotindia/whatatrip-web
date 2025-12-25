@@ -15,7 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "experiences", label: "Experiences" },
+    /*{ id: "experiences", label: "Experiences" },*/
     { id: "connect", label: "Connect" },
   ];
 
