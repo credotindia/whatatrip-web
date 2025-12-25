@@ -220,58 +220,104 @@ const CulturalImmersionForm: React.FC = () => {
                 Your Travel Style
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {travelStyles.map((style) => (
-                  <label key={style.id} className="cursor-pointer">
-                    <input
-                      type="radio"
-                      name="travelStyle"
-                      value={style.id}
-                      checked={formData.travelStyle === style.id}
-                      onChange={handleInputChange}
-                      className="sr-only"
-                    />
-                    <div className={`p-4 rounded-xl border-2 transition-all duration-200 ${
-                      formData.travelStyle === style.id
-                        ? 'border-amber-600 bg-amber-50'
-                        : 'border-stone-200 hover:border-stone-300'
-                    }`}>
-                      <h3 className="font-semibold text-stone-900 mb-1">{style.label}</h3>
-                      <p className="text-sm text-stone-600">{style.description}</p>
-                    </div>
-                  </label>
-                ))}
-              </div>
-            </div>
+              {travelStyles.map((style) => {
+              const isActive = formData.travelStyle === style.id;
 
-            {/* Immersion Level */}
-            <div>
-              <h2 className="text-2xl font-semibold text-stone-900 mb-6 flex items-center">
-                <Sparkles className="h-6 w-6 mr-2 text-amber-600" />
-                Cultural Immersion Level
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {immersionLevels.map((level) => (
-                  <label key={level.id} className="cursor-pointer">
-                    <input
-                      type="radio"
-                      name="immersionLevel"
-                      value={level.id}
-                      checked={formData.immersionLevel === level.id}
-                      onChange={handleInputChange}
-                      className="sr-only"
-                    />
-                    <div className={`p-4 rounded-xl border-2 transition-all duration-200 ${
-                      formData.immersionLevel === level.id
-                        ? 'border-teal-700 bg-teal-50'
-                        : 'border-stone-200 hover:border-stone-300'
-                    }`}>
-                      <h3 className="font-semibold text-stone-900 mb-1">{level.label}</h3>
-                      <p className="text-sm text-stone-600">{level.description}</p>
-                    </div>
-                  </label>
-                ))}
-              </div>
-            </div>
+                return (
+                  <label key={style.id} className="cursor-pointer">
+                  <input
+                    type="radio"
+                    name="travelStyle"
+                    value={style.id}
+                    checked={isActive}
+                    onChange={handleInputChange}
+                     className="sr-only"
+               />
+
+              <div
+              className={`p-4 rounded-xl border-2 transition-all duration-200
+                 ${
+                 isActive
+                ? 'border-teal-700 bg-teal-50'
+                : 'border-stone-200 hover:border-stone-300'
+            }
+          `}
+        >
+          <h3
+            className={`font-semibold mb-1 transition-colors duration-200
+              ${isActive ? 'text-stone-100' : 'text-stone-700'}
+            `}
+          >
+            {style.label}
+          </h3>
+
+          <p
+            className={`text-sm transition-colors duration-200
+              ${isActive ? 'text-stone-100' : 'text-stone-500'}
+            `}
+          >
+            {style.description}
+          </p>
+        </div>
+      </label>
+    );
+  })}
+</div>
+</div>
+
+           {/* Cultural Immersion Level */}
+<div>
+  <h2 className="text-2xl font-semibold text-stone-900 mb-6 flex items-center">
+    <Sparkles className="h-6 w-6 mr-2 text-amber-600" />
+    Cultural Immersion Level
+  </h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {immersionLevels.map((level) => {
+      const isActive = formData.immersionLevel === level.id;
+
+      return (
+        <label key={level.id} className="cursor-pointer">
+          <input
+            type="radio"
+            name="immersionLevel"
+            value={level.id}
+            checked={isActive}
+            onChange={handleInputChange}
+            className="sr-only"
+          />
+
+          <div
+            className={`p-4 rounded-xl border-2 transition-all duration-200
+              ${
+                isActive
+                  ? 'border-teal-700 bg-teal-50'
+                  : 'border-stone-200 hover:border-stone-300'
+              }
+            `}
+          >
+            <h3
+              className={`font-semibold mb-1 transition-colors duration-200
+                ${isActive ? 'text-stone-100' : 'text-stone-900'}
+              `}
+            >
+              {level.label}
+            </h3>
+
+            <p
+              className={`text-sm transition-colors duration-200
+                ${isActive ? 'text-stone-100' : 'text-stone-600'}
+              `}
+            >
+              {level.description}
+            </p>
+          </div>
+        </label>
+      );
+    })}
+  </div>
+</div>
+
 
             {/* Interaction Types */}
             <div>

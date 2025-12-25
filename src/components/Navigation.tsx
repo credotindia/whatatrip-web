@@ -79,7 +79,7 @@ const Navigation: React.FC<NavigationProps> = ({
                   }}
                   className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 ${
                     activeSection === item.id
-                      ? "text-amber-600 bg-amber-50"
+                      ? "text-amber-600 bg-amber-0"
                       : "text-stone-700 hover:text-amber-600 hover:bg-stone-50"
                   }`}
                 >
